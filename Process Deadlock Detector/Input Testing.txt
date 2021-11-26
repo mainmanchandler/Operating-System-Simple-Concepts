@@ -1,0 +1,68 @@
+Test_1
+
+2 2 2 1 1
+process 1 requests resource 4
+process 2 requests resource 1
+process 3 requests resource 3
+process 3 requests resource 5
+process 4 requests resource 2
+process 4 requests resource 3
+process 5 requests resource 2
+process 1 requests resource 1
+process 1 requests resource 2
+process 2 requests resource 2
+process 2 requests resource 3
+process 3 requests resource 4
+process 4 requests resource 4
+process 5 requests resource 3
+
+Expected Output:
+Deadlock, processes involved are
+1 2 3 4 5 
+
+
+Test_2
+
+2 2 2 1 1
+process 1 requests resource 1
+process 2 requests resource 1
+process 3 requests resource 3
+process 3 requests resource 5
+process 4 requests resource 2
+process 4 requests resource 3
+process 4 requests resource 4
+process 1 requests resource 1
+process 1 requests resource 3
+process 2 requests resource 1
+process 2 requests resource 3
+process 3 requests resource 1
+process 3 requests resource 4
+
+
+Expected Output:
+Deadlock, processes involved are
+1 2 3 
+
+
+Test_3
+
+2 2 3 3
+process 1 requests resource 1
+process 2 requests resource 1
+process 3 requests resource 3
+process 3 requests resource 3
+process 4 requests resource 2
+process 4 requests resource 3
+process 1 requests resource 2
+process 1 requests resource 3
+process 2 requests resource 4
+process 2 requests resource 4
+process 3 requests resource 1
+process 3 requests resource 4
+process 4 requests resource 3
+
+
+Expected Output:
+No deadlock, completion order
+2 3 4 1 
+
